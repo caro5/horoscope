@@ -31,9 +31,9 @@ public class HoroView extends Applet{
 	public static String[] allSigns = {"aries", "taurus", "gemini", "cancer", "leo", "virgo", "libra", "scorpio", "sagittarius", "capricorn", "aquarius", "pisces"};
 
 	private static void createFrame() {
-
-		Font theFont = new Font("Futura", Font.PLAIN, 14);
-		Font labelFont = new Font("Futura", Font.PLAIN, 16);
+		
+		Font theFont = new Font("Open Sans", Font.PLAIN, 16);
+		Font labelFont = new Font("Open Sans", Font.PLAIN, 18);
 		theFrame = new JFrame();
 		theFrame.setLayout(new GridLayout(4,1));
 		theFrame.setBounds(0, 0, frameW, frameH);
@@ -55,6 +55,10 @@ public class HoroView extends Applet{
 		cosmo.setWrapStyleWord(true);
 		cosmo.setFont(theFont);
 		cosmo.setBorder(BorderFactory.createEmptyBorder(0, 20, 0, 0));
+		Color colo = new Color(0x404041);
+		cosmo.setBackground(colo);
+		Color backC = Color.WHITE;
+		cosmo.setForeground(backC);
 		
 		daily = new JTextArea();
 		daily.setBounds(300, 300, 500, 300);
@@ -62,6 +66,8 @@ public class HoroView extends Applet{
 		daily.setWrapStyleWord(true);
 		daily.setFont(theFont);
 		daily.setBorder(BorderFactory.createEmptyBorder(0, 20, 0, 0));
+		daily.setBackground(colo);
+		daily.setForeground(backC);
 		
 		huff = new JTextArea();
 		huff.setBounds(500, 300, 500, 300);
@@ -69,6 +75,8 @@ public class HoroView extends Applet{
 		huff.setWrapStyleWord(true);
 		huff.setFont(theFont);
 		huff.setBorder(BorderFactory.createEmptyBorder(0, 20, 0, 0));
+		huff.setBackground(colo);
+		huff.setForeground(backC);
 
 		JComboBox signList = new JComboBox(allSigns);
 		signList.setFont(theFont);
@@ -91,27 +99,30 @@ public class HoroView extends Applet{
 		theFrame.add(cosmoPanel);
 		theFrame.add(dailyPanel);
 		theFrame.add(huffPanel);
-		panel.setBackground(Color.white);
+
 		
 		JLabel cosmoLabel = new JLabel("Cosmopolitan UK");
 		cosmoLabel.setFont(labelFont);
-		cosmoLabel.setForeground(Color.GRAY);
-		JLabel dailyLabel = new JLabel("NY Daily Post");
+		Color nameC = new Color(0xD2E8F8);
+		cosmoLabel.setForeground(nameC);
+		JLabel dailyLabel = new JLabel("NY Daily Post     ");
 		dailyLabel.setFont(labelFont);
-		dailyLabel.setForeground(Color.GRAY);
-		JLabel huffLabel = new JLabel("Huffington Post");
+		dailyLabel.setForeground(nameC);
+		JLabel huffLabel = new JLabel("Huffington Post  ");
 		huffLabel.setFont(labelFont);
-		huffLabel.setForeground(Color.GRAY);
+		huffLabel.setForeground(nameC);
 		cosmoPanel.add(cosmoLabel);
 		cosmoPanel.add(cosmo);
 		dailyPanel.add(dailyLabel);
 		dailyPanel.add(daily);
 		huffPanel.add(huffLabel);
 		huffPanel.add(huff);
+		Color c = new Color(0x404041);
+		panel.setBackground(c);
+		cosmoPanel.setBackground(c);
+		dailyPanel.setBackground(c);
+		huffPanel.setBackground(c);
 		
-		cosmoPanel.setBackground(Color.white);
-		dailyPanel.setBackground(Color.white);
-		huffPanel.setBackground(Color.white);
 		
 		theFrame.add(cosmoPanel);
 		theFrame.add(dailyPanel);
